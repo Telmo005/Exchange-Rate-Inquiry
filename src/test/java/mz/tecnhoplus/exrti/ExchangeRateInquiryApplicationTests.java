@@ -1,4 +1,4 @@
-package tecnhoplus.mz;
+package mz.tecnhoplus.exrti;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

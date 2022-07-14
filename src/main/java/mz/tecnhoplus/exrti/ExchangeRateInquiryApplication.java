@@ -1,4 +1,4 @@
-package tecnhoplus.mz;
+package mz.tecnhoplus.exrti;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
