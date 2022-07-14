@@ -5,7 +5,8 @@ import java.util.List;
 import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
 
 public interface ExchangeRateService {
-	// Save operation 1
+
+	// Save operation
 	ExchangeRateEntity saveExchangeRateEntity(ExchangeRateEntity exchangeRateEntity);
 
 	// Save operation with base
@@ -18,5 +19,9 @@ public interface ExchangeRateService {
 	ExchangeRateEntity updateExchangeRateEntity(ExchangeRateEntity exchangeRateEntity, Long exchangeRateEntityId);
 
 	// Delete operation
-	void deleteRateEntityById(Long rexchangeRateEntityId);
+	void deleteExchangeRateEntityById(String rexchangeRateEntityId);
+
+	// Read operation by id
+	Object findExchangeRateEntityById(String rexchangeRateEntityId);
+
 }

@@ -16,11 +16,16 @@ public class ExceptionHandler {
 
 	@org.springframework.web.bind.annotation.ExceptionHandler(value = { Exception.class })
 	public ResponseEntity<Object> handleyAnyException(Exception ex) throws IOException {
+		ErrorResponse err = null;
+		if (ex.getMessage().equals("No value present")) {
+			err = new ErrorResponse("FAILURE", "No data found", dtf.format(LocalDateTime.now()),
+					"info@technoplus.co.mz", ex.getMessage());
+		} else {
+			err = new ErrorResponse("FAILURE", "Oucureu um erro ao tentar processar a operação.",
+					dtf.format(LocalDateTime.now()), "info@technoplus.co.mz", ex.getCause().getMessage() + "");
+		}
 
-		String errorDescription = ex.getMessage() + " ";
-		ErrorResponse err = new ErrorResponse("FAILURE", errorDescription.toUpperCase(),
-				dtf.format(LocalDateTime.now()), ex.getMessage().toUpperCase(), errorDescription.toUpperCase());
-		LogSave.writeLog(dtf.format(LocalDateTime.now()) + "- Response error: " + errorDescription.toUpperCase());
+		LogSave.writeLog(dtf.format(LocalDateTime.now()) + "- Response error: " + ex.getCause());
 		return new ResponseEntity<>(err, new HttpHeaders(), HttpStatus.EXPECTATION_FAILED);
 	}
 }

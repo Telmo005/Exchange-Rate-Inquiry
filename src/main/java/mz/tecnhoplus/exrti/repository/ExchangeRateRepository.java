@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
 
 @Repository
-public interface ExchangeRateRepository extends JpaRepository<ExchangeRateEntity, Long> {
+public interface ExchangeRateRepository extends JpaRepository<ExchangeRateEntity, String> {
 
 }

@@ -36,11 +36,13 @@ public class LogSave {
 		File f = CreateLogFile();
 		if (f.exists()) {
 			bw = new BufferedWriter(new FileWriter(f.getAbsoluteFile(), true));
+			bw.newLine();
 			bw.write(logs); // + "\n");
 			bw.close();
 		} else {
 			f.createNewFile();
 			bw = new BufferedWriter(new FileWriter(f.getAbsoluteFile(), true));
+			bw.newLine();
 			bw.write(logs);// + "\n");
 			bw.close();
 		}
