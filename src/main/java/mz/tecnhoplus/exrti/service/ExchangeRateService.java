@@ -1,9 +1,16 @@
 package mz.tecnhoplus.exrti.service;
 
-import java.util.List;
+import java.io.IOException;
 
 import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
 
+/**
+ * @author Telmo Jr.
+ * @Date : 15-07-2022
+ * @Contact: +258 84 20 10 505 Email: Telmo.sigauquejr@gmail.com
+ * @Desc :
+ * 
+ */
 public interface ExchangeRateService {
 
 	// Save operation
@@ -13,7 +20,7 @@ public interface ExchangeRateService {
 	ExchangeRateEntity saveExchangeRateEntityBase(ExchangeRateEntity exchangeRateEntity);
 
 	// Read operation
-	List<ExchangeRateEntity> fetchExchangeRateEntityList();
+	Object fetchExchangeRateEntityList() throws IOException;
 
 	// Update operation
 	ExchangeRateEntity updateExchangeRateEntity(ExchangeRateEntity exchangeRateEntity, Long exchangeRateEntityId);

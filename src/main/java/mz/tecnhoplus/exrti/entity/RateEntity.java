@@ -11,10 +11,17 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+/**
+ * @author Telmo Jr.
+ * @Date : 15-07-2022
+ * @Contact: +258 84 20 10 505 Email: Telmo.sigauquejr@gmail.com
+ * @Desc :
+ *  
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,15 +29,18 @@ import lombok.NoArgsConstructor;
 @Table(name = "tblRate")
 public class RateEntity {
 
+	
 	@Id
 	@Column(name = "ccy_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonIgnore
 	private int Id;
 
+	@ApiModelProperty(value = "moeda")
 	@Column(name = "ccy_name", nullable = false)
 	private String currency;
 
+	@ApiModelProperty(value = "valor")
 	@Column(name = "ccy_value", nullable = false)
 	private Double value;
 

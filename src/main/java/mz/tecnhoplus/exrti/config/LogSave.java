@@ -7,13 +7,19 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * @author Telmo Jr.
+ * @Date : 15-07-2022
+ * @Contact: +258 84 20 10 505 Email: Telmo.sigauquejr@gmail.com
+ * @Desc   : Registo de logs
+ */
 public class LogSave {
 	static File file = null;
 	private final static DateTimeFormatter mtf = DateTimeFormatter.ofPattern("MM-yyyy");
 	private final static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
 	public static void createdDirectorylog() throws IOException {
-		file = new File("C:/Check Truncate/Log/" + mtf.format(LocalDateTime.now()));
+		file = new File("C:/ExchangeRate/Log/" + mtf.format(LocalDateTime.now()));
 		boolean b = false;
 		if (!file.exists()) {
 			b = file.mkdirs();

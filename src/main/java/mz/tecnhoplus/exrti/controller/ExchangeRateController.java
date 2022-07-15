@@ -1,7 +1,6 @@
 package mz.tecnhoplus.exrti.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.validation.Valid;
 
@@ -12,31 +11,42 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
 import mz.tecnhoplus.exrti.exception.ExceptionHandler;
 import mz.tecnhoplus.exrti.service.ExchangeRateService;
-
+/**
+ * @author Telmo Jr.
+ * @Date : 15-07-2022
+ * @Contact: +258 84 20 10 505 Email: Telmo.sigauquejr@gmail.com
+ * @Desc : 
+ */
 @RestController
+@Api(value = "Consulta de cambio")
 public class ExchangeRateController extends ExceptionHandler {
 
 	@Autowired(required = false)
 	private ExchangeRateService exchangeRateService;
 
 	// Save operation
-	@PostMapping("/saveExchangeRateBase")
+	@ApiOperation(value = "Faz o registo do câmbio actual")
+	@PostMapping("/saveExchangeRate")
 	public ExchangeRateEntity saveExchangeRateEntiryBase(@Valid @RequestBody ExchangeRateEntity exchangeRateEntity) {
 		return exchangeRateService.saveExchangeRateEntityBase(exchangeRateEntity);
 	}
 
 	// read all operation
+	@ApiOperation(value = "Apresenta a lista de cambios registados")
 	@GetMapping("/exchangeRate")
-	public List<ExchangeRateEntity> readExchangeRateEntity() {
+	public Object readExchangeRateEntity() throws IOException {
 		return exchangeRateService.fetchExchangeRateEntityList();
 	}
 
 	// read by ID
-	@GetMapping("/exchangeRate/{exchangeRateEntityId}")
-	public Object readExchangeRateEntityByID(@PathVariable("exchangeRateEntityId") String exchangeRateEntityId)
+	@ApiOperation(value = "Apresenta registos de cambio consoante a moeda")
+	@GetMapping("/exchangeRate/{base_code}")
+	public Object readExchangeRateEntityByID(@PathVariable("base_code") String exchangeRateEntityId)
 			throws IOException {
 		return exchangeRateService.findExchangeRateEntityById(exchangeRateEntityId);
 	}

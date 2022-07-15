@@ -1,5 +1,6 @@
 package mz.tecnhoplus.exrti.service;
 
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
@@ -14,6 +16,13 @@ import mz.tecnhoplus.exrti.entity.RateEntity;
 import mz.tecnhoplus.exrti.exception.ExceptionHandler;
 import mz.tecnhoplus.exrti.repository.ExchangeRateRepository;
 
+/**
+ * @author Telmo Jr.
+ * @Date : 15-07-2022
+ * @Contact: +258 84 20 10 505 Email: Telmo.sigauquejr@gmail.com
+ * @Desc :
+ * 
+ */
 @Service
 public class ExchangeRateServiceImpl extends ExceptionHandler implements ExchangeRateService {
 
@@ -39,9 +48,15 @@ public class ExchangeRateServiceImpl extends ExceptionHandler implements Exchang
 	}
 
 	@Override
-	public List<ExchangeRateEntity> fetchExchangeRateEntityList() {
+	public Object fetchExchangeRateEntityList() throws IOException {
 		// TODO Auto-generated method stub
-		return (List<ExchangeRateEntity>) exchangeRateRepository.findAll();
+		List<ExchangeRateEntity> exchangeRateEntitys = exchangeRateRepository.findAll();
+		if (exchangeRateEntitys.isEmpty()) {
+			return ExceptionHandler.handleyAnyException("No data found", "No value present",
+					HttpStatus.EXPECTATION_FAILED);
+		} else {
+			return exchangeRateEntitys;
+		}
 	}
 
 	@Override

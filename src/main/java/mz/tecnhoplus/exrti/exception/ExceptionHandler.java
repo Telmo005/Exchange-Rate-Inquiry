@@ -10,7 +10,13 @@ import org.springframework.http.ResponseEntity;
 
 import mz.tecnhoplus.exrti.config.LogSave;
 import mz.tecnhoplus.exrti.response.ErrorResponse;
-
+/**
+ * @author Telmo Jr.
+ * @Date : 15-07-2022
+ * @Contact: +258 84 20 10 505 Email: Telmo.sigauquejr@gmail.com
+ * @Desc : Padronização de erros
+ *  
+ */
 public class ExceptionHandler {
 	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
@@ -27,5 +33,15 @@ public class ExceptionHandler {
 
 		LogSave.writeLog(dtf.format(LocalDateTime.now()) + "- Response error: " + ex.getCause());
 		return new ResponseEntity<>(err, new HttpHeaders(), HttpStatus.EXPECTATION_FAILED);
+	}
+	
+	public static ResponseEntity<Object> handleyAnyException(String msg, String localMessage, HttpStatus httpStatus)
+			throws IOException {
+
+		String errorDescription = msg;
+		ErrorResponse err = new ErrorResponse("FAILURE", errorDescription,
+				dtf.format(LocalDateTime.now()), msg, localMessage);
+		LogSave.writeLog(dtf.format(LocalDateTime.now()) + "- Response error: " + errorDescription);
+		return new ResponseEntity<>(err, new HttpHeaders(), httpStatus);
 	}
 }
