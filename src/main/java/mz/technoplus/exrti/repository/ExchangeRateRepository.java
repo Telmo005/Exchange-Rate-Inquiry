@@ -1,9 +1,9 @@
-package mz.tecnhoplus.exrti.repository;
+package mz.technoplus.exrti.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
+import mz.technoplus.exrti.entity.ExchangeRateEntity;
 /**
  * @author Telmo Jr.
  * @Date : 15-07-2022

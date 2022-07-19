@@ -1,4 +1,4 @@
-package mz.tecnhoplus.exrti.exception;
+package mz.technoplus.exrti.exception;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -8,8 +8,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import mz.tecnhoplus.exrti.config.LogSave;
-import mz.tecnhoplus.exrti.response.ErrorResponse;
+import mz.technoplus.exrti.config.LogSave;
+import mz.technoplus.exrti.response.ErrorResponse;
 /**
  * @author Telmo Jr.
  * @Date : 15-07-2022

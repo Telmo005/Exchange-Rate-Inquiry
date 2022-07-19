@@ -1,4 +1,4 @@
-package mz.tecnhoplus.exrti.entity;
+package mz.technoplus.exrti.entity;
 
 import java.sql.Timestamp;
 

@@ -1,4 +1,4 @@
-package mz.tecnhoplus.exrti.config;
+package mz.technoplus.exrti.config;
 
 import java.io.BufferedWriter;
 import java.io.File;

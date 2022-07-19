@@ -1,4 +1,4 @@
-package mz.tecnhoplus.exrti.controller;
+package mz.technoplus.exrti.controller;
 
 import java.io.IOException;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
-import mz.tecnhoplus.exrti.exception.ExceptionHandler;
-import mz.tecnhoplus.exrti.service.ExchangeRateService;
+import mz.technoplus.exrti.entity.ExchangeRateEntity;
+import mz.technoplus.exrti.exception.ExceptionHandler;
+import mz.technoplus.exrti.service.ExchangeRateService;
 /**
  * @author Telmo Jr.
  * @Date : 15-07-2022

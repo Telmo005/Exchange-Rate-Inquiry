@@ -1,4 +1,4 @@
-package mz.tecnhoplus.exrti.response;
+package mz.technoplus.exrti.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

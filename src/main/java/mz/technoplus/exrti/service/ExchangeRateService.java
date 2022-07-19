@@ -1,8 +1,8 @@
-package mz.tecnhoplus.exrti.service;
+package mz.technoplus.exrti.service;
 
 import java.io.IOException;
 
-import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
+import mz.technoplus.exrti.entity.ExchangeRateEntity;
 
 /**
  * @author Telmo Jr.

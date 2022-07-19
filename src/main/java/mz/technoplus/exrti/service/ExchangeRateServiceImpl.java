@@ -1,4 +1,4 @@
-package mz.tecnhoplus.exrti.service;
+package mz.technoplus.exrti.service;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import mz.tecnhoplus.exrti.entity.ExchangeRateEntity;
-import mz.tecnhoplus.exrti.entity.RateEntity;
-import mz.tecnhoplus.exrti.exception.ExceptionHandler;
-import mz.tecnhoplus.exrti.repository.ExchangeRateRepository;
+import mz.technoplus.exrti.entity.ExchangeRateEntity;
+import mz.technoplus.exrti.entity.RateEntity;
+import mz.technoplus.exrti.exception.ExceptionHandler;
+import mz.technoplus.exrti.repository.ExchangeRateRepository;
 
 /**
  * @author Telmo Jr.
