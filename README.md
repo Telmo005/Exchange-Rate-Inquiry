@@ -17,5 +17,5 @@ Para iniciar o programa siga as instruções abaixo:
   
 5 - Inicie a documentação do projecto chamando o link http://localhost:8080/swagger-ui.html
 
-6 - Chamne os endpoints apresentados no link acima.
+6 - Chame os endpoints apresentados no link acima.
 
