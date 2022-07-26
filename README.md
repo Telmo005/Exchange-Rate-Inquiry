@@ -4,7 +4,7 @@ Este projecto foi gerado com maven e java 1.8
 ## Servidor de desenvolvimento
 Para iniciar o programa siga as instruções abaixo:
 
-1 - Garanta que o java 1.8 e o maven estejam instalados e com as variaveis de ambiente configados na sua maquina. Note que a versao do java deve ser superior a 1.8
+1 - Garanta que o java e o maven estejam instalados e com as variaveis de ambiente configurados na sua maquina. Note que a versao do java deve ser igual ou superior a 1.8
 
 2 - Baixe o projecto
 
